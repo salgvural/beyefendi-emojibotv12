@@ -32,7 +32,7 @@ if(message.member.permissions.has("ADMINISTRATOR")) permlvl = 3;
 return permlvl;
 };
 
-client.config = require('./structures/config.js');
+client.config = require('./ayarlar/ayarlar.js');
 client.login(client.config.token);
 
 client.on('ready', async () => {
