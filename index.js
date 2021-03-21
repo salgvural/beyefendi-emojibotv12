@@ -4,7 +4,7 @@ const client = new Discord.Client({ partials: ['MESSAGE', 'CHANNEL', 'REACTION']
 const fs = require("fs");
 const database = require('quick.db');
 const moment = require('moment');
-moment.locale('tr');
+moment.locale('tr');//Beyefendi Code discord.gg/uSpaVjcDF9
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
@@ -14,7 +14,7 @@ if(err) console.error(err);
 console.log(`${files.filter(a => a.endsWith('.js')).length} komut yüklenecek.`);
 files.filter(a => a.endsWith('.js')).forEach(async f => {
 
-let command = require(`./commands/${f}`);
+let command = require(`./commands/${f}`);//Beyefendi Code discord.gg/uSpaVjcDF9
 if(!command) return;
 
 client.commands.set(command.help.name, command);
@@ -28,7 +28,7 @@ if(!message.guild) return;
 var permlvl = 0;
 if(message.member.permissions.has("MANAGE_MESSAGES")) permlvl = 1;
 if(message.member.permissions.has("BAN_MEMBERS")) permlvl = 2;
-if(message.member.permissions.has("ADMINISTRATOR")) permlvl = 3;
+if(message.member.permissions.has("ADMINISTRATOR")) permlvl = 3;//Beyefendi Code discord.gg/uSpaVjcDF9
 return permlvl;
 };
 
@@ -39,7 +39,7 @@ client.on('ready', async () => {
 
 require("./util/eventLoader")(client);
 client.user.setStatus('online');
-client.user.setActivity('-help | -yardım | discord.gg/codare', { type: 'WATCHING' })
+client.user.setActivity('s!help | s!yardım | discord.gg/uSpaVjcDF9', { type: 'LISTENING' })//Beyefendi Code discord.gg/uSpaVjcDF9
 
 client.users.cache.forEach(x => {
   if(database.fetch(`k.${x.id}`)) {
@@ -50,5 +50,5 @@ client.users.cache.forEach(x => {
   };
 });
 
-return console.log(`${client.user.tag} ismi ile giriş yaptım.`);
+return console.log(`${client.user.tag} ismi ile giriş yaptım.`);//Beyefendi Code discord.gg/uSpaVjcDF9
 });
