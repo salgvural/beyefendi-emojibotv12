@@ -1,7 +1,7 @@
 const config = {
 
 "token": "token",
-"prefix": "-",
+"prefix": "s!",
 "sahip": "id"
 
 };
